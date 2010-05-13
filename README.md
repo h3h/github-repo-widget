@@ -23,3 +23,5 @@ repo path ("rails/rails" in this case) to the repo you want.
 
 Obviously if you're going to include multiple widgets on the same page, you
 only need one &lt;style&gt; block.
+
+[See a Demo](http://h3h.github.com/github-repo-widget/test.html)
