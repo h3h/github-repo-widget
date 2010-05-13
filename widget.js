@@ -25,20 +25,11 @@ GHWidget = (function () {
 
   var init = function(s_id, s_repo) {
     id = s_id; repo = s_repo;
-    addStyleSheet("widget.css");
-//    addScript(GH_API_URL + repo + "?callback=GHWidget.receive");
-    GHWidget.receive({repository:{
-      watchers:5546,
-      forks:839,
-      url:'http://github.com/rails/rails',
-      owner:'rails',
-      name:'rails',
-      description:'Ruby on Rails'
-    }});
+    addStyleSheet("http://h3h.github.com/github-repo-widget/widget.css");
+    addScript(GH_API_URL + repo + "?callback=GHWidget.receive");
   };
 
   var receive = function (data) {
-    console.log("Received: %o", data);
     var el = document.getElementById(id);
     el.className = (el.className + '').replace(/\bloading\b/, '');
     try {
