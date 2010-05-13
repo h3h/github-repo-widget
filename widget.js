@@ -25,7 +25,7 @@ GHWidget = (function () {
 
   var init = function(s_id, s_repo) {
     id = s_id; repo = s_repo;
-    addStyleSheet("widget.css");
+    addStyleSheet("http://h3h.github.com/github-repo-widget/widget.css");
     addScript(GH_API_URL + repo + "?callback=GHWidget.receive");
   };
 
