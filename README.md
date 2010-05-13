@@ -9,7 +9,7 @@ rate limits apply.
 ## Insert this Code into Your Page
 
 Replace the HTML id ("gh\_rails\_rails" in this case) in two places, then the
-repo url "rails/rails" in this case to the repo you want.
+repo path ("rails/rails" in this case) to the repo you want.
 
     <style scoped="scoped">
     .gh_widget { width:428px;padding:8px 10px 0;color:#888;font-size:12px;
