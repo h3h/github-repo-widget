@@ -17,11 +17,11 @@ repo path ("rails/rails" in this case) to the repo you want.
       -moz-border-radius:4px;-webkit-border-radius:4px;border:1px solid #ddd }
     .gh_widget.loading { text-align:center; }
     </style>
-    <div id="gh_rails_rails" class="gh_widget loading">&hellip;</div>
     <script src="http://h3h.github.com/github-repo-widget/widget.js"></script>
+    <div id="gh_rails_rails" class="gh_widget loading">&hellip;</div>
     <script>GHWidget.init("gh_rails_rails", "rails/rails");</script>
 
 Obviously if you're going to include multiple widgets on the same page, you
-only need one &lt;style&gt; block.
+only need one &lt;style&gt; block and one &lt;script src&gt; to get widget.js.
 
 [See a Demo](http://h3h.github.com/github-repo-widget/test.html)
