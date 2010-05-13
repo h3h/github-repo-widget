@@ -30,7 +30,6 @@ GHWidget = (function () {
   };
 
   var receive = function (data) {
-    console.log("Received: %o", data);
     var el = document.getElementById(id);
     el.className = (el.className + '').replace(/\bloading\b/, '');
     try {
