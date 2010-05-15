@@ -19,21 +19,22 @@ GHWidget = (function () {
       <p class="description">{description}</p>\
     </div>\
   ';
-  var id, repo;
+  var mapRepoToId = {};
 
   // *-* public methods *-*
 
-  var init = function(s_id, s_repo) {
-    id = s_id; repo = s_repo;
+  var init = function(id, repo) {
+    mapRepoToId[repo] = id;
     addStyleSheet("http://h3h.github.com/github-repo-widget/widget.css");
     addScript(GH_API_URL + repo + "?callback=GHWidget.receive");
   };
 
   var receive = function (data) {
-    var el = document.getElementById(id);
-    el.className = (el.className + '').replace(/\bloading\b/, '');
     try {
       if (data && data.repository) {
+        var id = mapRepoToId[data.repository.owner +'/'+ data.repository.name];
+        var el = document.getElementById(id);
+        el.className = (el.className + '').replace(/\bloading\b/, '');
         el.innerHTML = WIDGET_TEMPLATE.replace(/\{(\w+)\}/g, function (_, m) {
           var v = data.repository[m].toString();
           if (/^\d+$/.test(v)) {
@@ -42,13 +43,8 @@ GHWidget = (function () {
           return v;
         });
       }
-      else {
-        throw "No data.";
-      }
     }
-    catch(e) {
-      el.parentNode.removeChild(el);
-    }
+    catch(e) {}
   };
 
   // *-* utility methods *-*
